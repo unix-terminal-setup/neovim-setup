@@ -18,4 +18,4 @@ echo "Adding an alias for nvim to vim"
 echo 'alias vim="nvim"' >>~/.bashrc
 
 # Test installation was successful:
-nvim --help | echo "Successfully install NeoVim"
+nvim --help | echo "Successfully installed NeoVim"
