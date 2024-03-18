@@ -16,3 +16,8 @@ sudo apt remove -y --purge vim vim-*
 # Setup alias for nvim to vim:
 echo "Adding an alias for nvim to vim"
 echo 'alias vim="nvim"' >>~/.bashrc
+
+# Test installation was successful:
+nvim --help || echo "Failed installing NeoVim" && exit 1
+
+echo "Successfully install NeoVim"
