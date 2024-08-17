@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
-# Install neovim dependencies
-echo "Installing NeoVim dependencies"
-sudo apt install cmake
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt-get install -y nodejs
-sudo apt install python3-venv
+# OS Dependencies
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	echo "Linux detected."
+  sudo apt install cmake python3-venv -y
+  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt-get install -y nodejs
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "Mac detected."    
+else
+  echo "Unknown OS, abort."
+	exit 1
+fi
 
 # Install neovim
 sudo snap install nvim --classic
