@@ -25,3 +25,18 @@ echo 'alias vim="nvim"' >>~/.bashrc
 
 # Test installation was successful:
 nvim --help | echo "Successfully installed NeoVim"
+
+# Reload Path
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	echo "Linux detected."
+  source ~/.bashrc
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "Mac detected." 
+  source ~/.bash_profile
+else
+  echo "Unknown OS, abort."
+	exit 1
+fi
+
+# Run neovim
+vim
